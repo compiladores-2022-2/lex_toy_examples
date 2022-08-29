@@ -1,17 +1,8 @@
 %{
 
-enum TOKEN_ID{
-  // NUM_..
-  // CONTNUE ...
-  ID,
-  CONTINUE
-};
-
-
-03120i10so10c239dk31doic2
+#include "utils/enums.h"
 
 %}
-  
 
 dig         [0-9]
 alpha       [A-Z|a-z]
@@ -39,9 +30,7 @@ int         "int"
 dois_pontos ":"
 ponto_virg  ";"
 
-
-resto/defacult/erro "."
-
+erro "."
 
 %%
 
@@ -57,8 +46,9 @@ resto/defacult/erro "."
   printf("\n");
 }
 
-{continue} { printf("TOKEN: CONTINUE\n");
-  return TOKEN_ID::CONTINUE;
+{continue} {
+  printf(">> Token: CONTINUE (id %d)\n", CONTINUE);
+  return CONTINUE;
 }
 {pare} { printf("TOKEN: PARE\n");}
 {se} { printf("TOKEN: SE\n");}
