@@ -35,44 +35,93 @@ erro "."
 %%
 
 {num_flut} {
-  printf("TOKEN: FLUTUANTE\t");
-  printf("VALOR: %s\t", yytext);
-  printf("\n");
+  printf(">> Token: NUM_FLUT (id %d), Valor: %s\t\n", NUM_FLUT, yytext);
+  return NUM_FLUT;
 }
 
 {num_int} {
-  printf("TOKEN: INTEIRO\t");
-  printf("VALOR: %s\t", yytext);
-  printf("\n");
+  printf(">> Token: NUM_INT (id %d), Valor: %s\t\n", NUM_INT, yytext);
+  return NUM_INT;
 }
 
 {continue} {
   printf(">> Token: CONTINUE (id %d)\n", CONTINUE);
   return CONTINUE;
 }
-{pare} { printf("TOKEN: PARE\n");}
-{se} { printf("TOKEN: SE\n");}
-{senao} { printf("TOKEN: SENAO\n");}
-{enquanto} { printf("TOKEN: ENQUANTO\n");}
-{faca} { printf("TOKEN: FACA\n");}
 
-{para} { printf("TOKEN: PARA\n");}
-{escolha} { printf("TOKEN: ESCOLHA\n");}
-{caso} { printf("TOKEN: CASO\n");}
-{retorne} { printf("TOKEN: RETORNE\n");}
-{imprima} { printf("TOKEN: IMPRIMA\n");}
+{pare} {
+  printf(">> Token: PARE (id %d)\n", PARE);
+  return PARE;
+}
 
-{var} { printf("TOKEN: VAR\n");}
+{se} {
+  printf(">> Token: SE (id %d)\n", SE);
+  return SE;
+}
 
-{int} { printf("TOKEN: INT\n");}
+{senao} {
+  printf(">> Token: SENAO (id %d)\n", SENAO);
+  return SENAO;
+}
 
-{dois_pontos} { printf("TOKEN: DOIS_PONTOS\n");}
-{ponto_virg} { printf("TOKEN: PONTO_VIRGULA\n");}
+{enquanto} {
+  printf(">> Token: ENQUANTO (id %d)\n", ENQUANTO);
+  return ENQUANTO;
+}
+
+{faca} {
+  printf(">> Token: FACA (id %d)\n", FACA);
+  return FACA;
+}
+
+{para} {
+  printf(">> Token: PARA (id %d)\n", PARA);
+  return PARA;
+}
+
+{escolha} {
+  printf(">> Token: ESCOLHA (id %d)\n", ESCOLHA);
+  return ESCOLHA;
+}
+
+{caso} {
+  printf(">> Token: CASO (id %d)\n", CASO);
+  return CASO;
+}
+
+{retorne} {
+  printf(">> Token: RETORNE (id %d)\n", RETORNE);
+  return RETORNE;
+}
+
+{imprima} {
+  printf(">> Token: IMPRIMA (id %d)\n", IMPRIMA);
+  return IMPRIMA;
+}
+
+{var} {
+  printf(">> Token: VAR (id %d)\n", VAR);
+  return VAR;
+}
+
+{int} {
+  printf(">> Token: INT (id %d)\n", INT);
+  return INT;
+}
+
+{dois_pontos} {
+  printf(">> Token: DOIS_PONTOS (id %d)\n", DOIS_PONTOS);
+  return DOIS_PONTOS;
+}
+
+{ponto_virg} {
+  printf(">> Token: PONTO_VIRG (id %d)\n", PONTO_VIRG);
+  return PONTO_VIRG;
+}
 
 {id} {
-  printf("TOKEN: ID\t");
-  printf("VALOR: %s\t", yytext);
-  printf("\n");
+  printf(">> Token: ID (id %d), Valor: %s\t\n", ID, yytext);
+  return ID;
 }
 
 %%

@@ -772,23 +772,21 @@ case 1:
 YY_RULE_SETUP
 #line 37 "prototype.l"
 {
-  printf("TOKEN: FLUTUANTE\t");
-  printf("VALOR: %s\t", yytext);
-  printf("\n");
+  printf(">> Token: NUM_FLUT (id %d), Valor: %s\t\n", NUM_FLUT, yytext);
+  return NUM_FLUT;
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 43 "prototype.l"
+#line 42 "prototype.l"
 {
-  printf("TOKEN: INTEIRO\t");
-  printf("VALOR: %s\t", yytext);
-  printf("\n");
+  printf(">> Token: NUM_INT (id %d), Valor: %s\t\n", NUM_INT, yytext);
+  return NUM_INT;
 }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 49 "prototype.l"
+#line 47 "prototype.l"
 {
   printf(">> Token: CONTINUE (id %d)\n", CONTINUE);
   return CONTINUE;
@@ -796,89 +794,130 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 53 "prototype.l"
-{ printf("TOKEN: PARE\n");}
+#line 52 "prototype.l"
+{
+  printf(">> Token: PARE (id %d)\n", PARE);
+  return PARE;
+}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 54 "prototype.l"
-{ printf("TOKEN: SE\n");}
+#line 57 "prototype.l"
+{
+  printf(">> Token: SE (id %d)\n", SE);
+  return SE;
+}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 55 "prototype.l"
-{ printf("TOKEN: SENAO\n");}
+#line 62 "prototype.l"
+{
+  printf(">> Token: SENAO (id %d)\n", SENAO);
+  return SENAO;
+}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 56 "prototype.l"
-{ printf("TOKEN: ENQUANTO\n");}
+#line 67 "prototype.l"
+{
+  printf(">> Token: ENQUANTO (id %d)\n", ENQUANTO);
+  return ENQUANTO;
+}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 57 "prototype.l"
-{ printf("TOKEN: FACA\n");}
+#line 72 "prototype.l"
+{
+  printf(">> Token: FACA (id %d)\n", FACA);
+  return FACA;
+}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 59 "prototype.l"
-{ printf("TOKEN: PARA\n");}
+#line 77 "prototype.l"
+{
+  printf(">> Token: PARA (id %d)\n", PARA);
+  return PARA;
+}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 60 "prototype.l"
-{ printf("TOKEN: ESCOLHA\n");}
+#line 82 "prototype.l"
+{
+  printf(">> Token: ESCOLHA (id %d)\n", ESCOLHA);
+  return ESCOLHA;
+}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 61 "prototype.l"
-{ printf("TOKEN: CASO\n");}
+#line 87 "prototype.l"
+{
+  printf(">> Token: CASO (id %d)\n", CASO);
+  return CASO;
+}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 62 "prototype.l"
-{ printf("TOKEN: RETORNE\n");}
+#line 92 "prototype.l"
+{
+  printf(">> Token: RETORNE (id %d)\n", RETORNE);
+  return RETORNE;
+}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 63 "prototype.l"
-{ printf("TOKEN: IMPRIMA\n");}
+#line 97 "prototype.l"
+{
+  printf(">> Token: IMPRIMA (id %d)\n", IMPRIMA);
+  return IMPRIMA;
+}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 65 "prototype.l"
-{ printf("TOKEN: VAR\n");}
+#line 102 "prototype.l"
+{
+  printf(">> Token: VAR (id %d)\n", VAR);
+  return VAR;
+}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 67 "prototype.l"
-{ printf("TOKEN: INT\n");}
+#line 107 "prototype.l"
+{
+  printf(">> Token: INT (id %d)\n", INT);
+  return INT;
+}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 69 "prototype.l"
-{ printf("TOKEN: DOIS_PONTOS\n");}
+#line 112 "prototype.l"
+{
+  printf(">> Token: DOIS_PONTOS (id %d)\n", DOIS_PONTOS);
+  return DOIS_PONTOS;
+}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 70 "prototype.l"
-{ printf("TOKEN: PONTO_VIRGULA\n");}
+#line 117 "prototype.l"
+{
+  printf(">> Token: PONTO_VIRG (id %d)\n", PONTO_VIRG);
+  return PONTO_VIRG;
+}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 72 "prototype.l"
+#line 122 "prototype.l"
 {
-  printf("TOKEN: ID\t");
-  printf("VALOR: %s\t", yytext);
-  printf("\n");
+  printf(">> Token: ID (id %d), Valor: %s\t\n", ID, yytext);
+  return ID;
 }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 78 "prototype.l"
+#line 127 "prototype.l"
 ECHO;
 	YY_BREAK
-#line 881 "lex.yy.c"
+#line 920 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1883,7 +1922,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 78 "prototype.l"
+#line 127 "prototype.l"
 
 
 int yywrap(){}
